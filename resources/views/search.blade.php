@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="d-flex align-items-center justify-content-between mb-3">
-        <h4 class="text-dark">Kontak</h4>
-        <a href="{{ route('contacts.create') }}" class="btn btn-primary px-4">Tambah Kontak Baru</a>
+        <h4 class="text-dark">Pencarian Kontak {{ $key }}</h4>
+        <a href="{{ route('contacts.index') }}" class="btn btn-secondary px-4">Kembali</a>
     </div>
     <form action="{{ route('contacts.search') }}" method="get" class="mb-3">
         <input type="search" name="search" id="search" placeholder="Cari Kontak . . ." class="form-control shadow-none">
@@ -46,6 +46,6 @@
             </table>
         </div>
     @else
-        <p class="mb-0 text-secondary">Belum Ada Kontak</p>
+        <p class="mb-0 text-secondary">Pencarian tidak ditemukan</p>
     @endif
 @endsection

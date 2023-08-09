@@ -15,6 +15,7 @@ use App\Http\Controllers\ContactController;
 */
 
 Route::get('/', [ContactController::class, 'index'])->name('contacts.index');
+Route::get('search', [ContactController::class, 'search'])->name('contacts.search');
 Route::get('buat', [ContactController::class, 'create'])->name('contacts.create');
 Route::post('buat/store', [ContactController::class, 'store'])->name('contacts.store');
 Route::get('edit/{id}', [ContactController::class, 'edit'])->name('contacts.edit');

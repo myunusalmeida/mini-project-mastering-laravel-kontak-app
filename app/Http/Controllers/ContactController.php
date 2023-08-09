@@ -13,6 +13,13 @@ class ContactController extends Controller
         return view('index', ['contacts' => $contacts]);
     }
 
+    public function search(Request $request)
+    {
+        $key = $request->search;
+        $contacts = Contact::where('name', 'like', '%' . $key . '%')->get();
+        return view('search', ['contacts' => $contacts, 'key' => $key]);
+    }
+
     public function create()
     {
         return view('create');
